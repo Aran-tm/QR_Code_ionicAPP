@@ -22,12 +22,35 @@
   <!-- === Generate QR === -->
   <div class="segment">
     <div class="segment-content">
-
       <div id="qrImage">
         <div class="d-flex-center">
-          <div class="d-flex-center qr-wrapper"></div>
+          <div class="d-flex-center qr-wrapper">
+            @if(qrText){
+            <qr-code [value]="qrText" size="190" errorCorrectionLevel="M" />
+            } @else {
+            <img class="qr-placeholder" src="assets/images/qr.webp" alt="" />
+            }
+          </div>
         </div>
+        <div class="ion-padding-top">{{qrText}}</div>
       </div>
+
+      <ion-textarea
+        label="Outline textarea"
+        labelPlacement="floating"
+        fill="outline"
+        [(ngModel)]="qrText"
+        rows="4"
+        [autoGrow]="true"
+      ></ion-textarea>
+
+      <!-- === Share QR === -->
+      @if(qrText){
+      <ion-button (click)="captureScreen()" class="submit ion-padding-top">
+        Share
+        <ion-icon slot="end" name="share-social-outline"></ion-icon>
+      </ion-button>
+      }
     </div>
   </div>
   }
