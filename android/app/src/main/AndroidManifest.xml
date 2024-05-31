@@ -39,4 +39,9 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- To get access to the camera. -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- To get access to the flashlight. -->
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
 </manifest>

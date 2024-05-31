@@ -19,7 +19,7 @@ export class HomePage {
   platform = inject(Platform);    // para detectar las plataformas web, ios o android
 
   // esto es para establecer donde iniciar el segment
-  segment = 'generate';
+  segment = 'scan';
   qrText = '';
 
   constructor() { }

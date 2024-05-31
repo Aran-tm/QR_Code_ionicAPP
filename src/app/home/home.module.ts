@@ -8,6 +8,7 @@ import { HomePageRoutingModule } from './home-routing.module';
 
 // modulo para el codigo QR
 import { QrCodeModule } from 'ng-qrcode';
+import { BarcodeScanningModalComponent } from './barcode-scanning-modal.component';
 
 
 
@@ -18,8 +19,8 @@ import { QrCodeModule } from 'ng-qrcode';
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    QrCodeModule
+    QrCodeModule,
   ],
-  declarations: [HomePage]
+  declarations: [HomePage, BarcodeScanningModalComponent],
 })
 export class HomePageModule {}
