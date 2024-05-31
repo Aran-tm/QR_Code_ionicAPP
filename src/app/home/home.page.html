@@ -19,25 +19,52 @@
   @if (segment === 'scan') {
   <div class="segment">
     <div class="segment-content">
+      <img src="assets/images/scan-qr.webp" alt="" />
 
-      <img src="assets/images/scan-qr.webp" alt="">
-
-      <h6 class="scan-label">Scan or select an image of a QR code to get its value</h6>
+      <h6 class="scan-label">
+        Scan or select an image of a QR code to get its value
+      </h6>
 
       <ion-row>
         <ion-col size="6">
-          <ion-button class="submit" expand="block">
+          <ion-button (click)="startScan()" class="submit" expand="block">
             Scan
             <ion-icon slot="end" name="scan-outline"></ion-icon>
           </ion-button>
         </ion-col>
         <ion-col size="6">
-          <ion-button class="submit" expand="block">
+          <ion-button
+            (click)="readBarCodeFromImage()"
+            class="submit"
+            expand="block"
+          >
             Select
             <ion-icon slot="end" name="image-outline"></ion-icon>
           </ion-button>
         </ion-col>
       </ion-row>
+
+      <!-- Scan Result -->
+      @if (scanResult) {
+      <ion-item class="result" lines="none">
+        <ion-label>
+          <p>Scan Result</p>
+          <div>{{scanResult}}</div>
+        </ion-label>
+
+        <ion-buttons slot="end">
+          @if(isURL()){
+          <ion-button color="tertiary" (click)="openCapacitorSite()">
+            <ion-icon slot="icon-only" name="globe-outline"></ion-icon>
+          </ion-button>
+          }
+
+          <ion-button color="tertiary" (click)="writeToClipboard()">
+            <ion-icon slot="icon-only" name="copy-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-item>
+      }
     </div>
   </div>
   } @else {
