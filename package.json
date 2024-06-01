@@ -14,7 +14,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^17.0.2",
-    "@angular/common": "^17.0.2",
+    "@angular/common": "^18.0.0",
     "@angular/compiler": "^17.0.2",
     "@angular/core": "^17.0.2",
     "@angular/forms": "^17.0.2",
@@ -67,7 +67,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.2.2"
+    "typescript": "^5.4.5"
   },
   "description": "An Ionic project"
 }
